@@ -57,6 +57,7 @@ export default function TechnicianDashboard() {
             <Button variant="outline" onClick={() => navigate("/technician/profile")} className="border-border/30 text-primary-foreground/70"><Settings className="w-4 h-4 mr-2" /> My Profile</Button>
             <Button variant="ghost" onClick={() => { signOut(); navigate("/"); }} className="text-red-400"><LogOut className="w-4 h-4 mr-2" /> Sign Out</Button>
           </div>
+        </div>
 
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">My Jobs</h1>
