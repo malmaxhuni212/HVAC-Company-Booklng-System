@@ -26,14 +26,14 @@ function AdminSidebar() {
     <Sidebar collapsible="icon" className="border-r border-border/50">
       <SidebarContent className="bg-[#0a1628]">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-primary-foreground/50">Metro Admin</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-white">Metro Admin</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <NavLink to={item.url} end={item.url === "/admin"} className={({ isActive }) =>
-                      `flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${isActive ? "bg-cta/20 text-cta" : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/10"}`
+                      `flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${isActive ? "bg-cta/20 text-cta" : "text-white hover:bg-white/10"}`
                     }>
                       <item.icon className="h-4 w-4" />
                       {!collapsed && <span>{item.title}</span>}
@@ -49,7 +49,7 @@ function AdminSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <button onClick={() => navigate("/")} className="flex items-center gap-2 px-3 py-2 text-primary-foreground/70 hover:text-primary-foreground w-full">
+                  <button onClick={() => navigate("/")} className="flex items-center gap-2 px-3 py-2 text-white hover:bg-white/10 w-full">
                     <Home className="h-4 w-4" />{!collapsed && <span>Back to Site</span>}
                   </button>
                 </SidebarMenuButton>
