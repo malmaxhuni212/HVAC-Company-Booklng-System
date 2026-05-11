@@ -172,3 +172,21 @@
     }
   }
 }
+
+/* Admin panel: enforce white text on dark navy backgrounds */
+.admin-scope,
+.admin-scope h1,
+.admin-scope h2,
+.admin-scope h3,
+.admin-scope h4,
+.admin-scope p,
+.admin-scope span,
+.admin-scope td,
+.admin-scope th,
+.admin-scope label,
+.admin-scope div {
+  color: hsl(var(--primary-foreground));
+}
+.admin-scope .text-muted-foreground {
+  color: hsl(0 0% 100% / 0.65);
+}
