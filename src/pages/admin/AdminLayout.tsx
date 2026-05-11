@@ -79,7 +79,7 @@ export default function AdminLayout() {
             <SidebarTrigger className="text-primary-foreground" />
             <span className="ml-3 font-semibold text-lg">Admin Panel</span>
           </header>
-          <main className="flex-1 p-6 overflow-auto">
+          <main className="admin-scope flex-1 p-6 overflow-auto">
             <Outlet />
           </main>
         </div>
