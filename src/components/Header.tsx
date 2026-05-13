@@ -22,20 +22,16 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Services</a>
-            <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">About Us</a>
-            <a href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Reviews</a>
-            <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
-          </nav>
+          {/* Navigation + CTA + Auth (right-aligned) */}
+          <div className="flex items-center gap-8 ml-auto">
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Services</a>
+              <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">About Us</a>
+              <a href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Reviews</a>
+              <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+            </nav>
 
-          {/* CTA + Auth */}
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:block text-right">
-              <p className="text-xs text-muted-foreground">24/7 Emergency</p>
-              <p className="font-semibold text-foreground">(555) 123-4567</p>
-            </div>
+            <div className="flex items-center gap-3">
             {user ? (
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" onClick={() => navigate("/book")} className="hidden sm:flex bg-cta text-accent-foreground hover:bg-cta-hover border-none">
@@ -60,6 +56,7 @@ export function Header() {
                 </Button>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>
