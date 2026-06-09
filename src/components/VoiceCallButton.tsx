@@ -63,23 +63,14 @@ export const VoiceCallButton = forwardRef<VoiceCallButtonHandle, object>((_, ref
     setIsAttention(false);
 
     try {
-      const response = await fetch("https://api.retellai.com/v2/create-web-call", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${API_KEY}`,
-        },
-        body: JSON.stringify({
-          agent_id: AGENT_ID,
-        }),
+      const { data, error } = await supabase.functions.invoke("create-retell-call", {
+        body: {},
       });
 
-      if (!response.ok) {
+      if (error || !data?.access_token) {
         throw new Error("Failed to create web call");
       }
 
-      const data = await response.json();
-      
       await retellClientRef.current?.startCall({
         accessToken: data.access_token,
       });
@@ -88,6 +79,7 @@ export const VoiceCallButton = forwardRef<VoiceCallButtonHandle, object>((_, ref
       setCallStatus("idle");
     }
   };
+
 
   const endCall = () => {
     retellClientRef.current?.stopCall();
